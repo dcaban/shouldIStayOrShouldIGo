@@ -195,3 +195,8 @@ a.bttn-dark:focus {
   margin-bottom: 10px;
   border-radius: 4px;
 }
+
+.hotelImg{
+  margin-top: 20px;
+  max-height: 180px;
+}
