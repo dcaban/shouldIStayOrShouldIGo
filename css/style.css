@@ -26,7 +26,7 @@ body {
 }
 
 .pink {
-
+  background-color: white;
    min-width: 100vh;
 }
 .flex {
@@ -147,3 +147,9 @@ a.bttn-dark:focus {
   right: 0;
   opacity: 1;
 }
+
+.indicator{
+  background-color: deepskyblue !important;
+}
+
+
