@@ -13,12 +13,21 @@
     <h3>My Google Maps Demo</h3>
     <div id="map"></div>
 
-    </script> -->
+    <form>
+		<label for="start">Start</label>
+        <input class="search" id="start" type="text">
+        <label for="end">End</label>
+        <input class="search" id="end" type="text">
+
+        <button id="search-button" class="btn btn-default" type="submit">search</button>
+	</form>
+
+    </script>
 	<script async defer
  	 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFS1g6Cj2tADB3ENEVpXcJ1CIeb6nk1NE&callback=initMap">
 	</script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+	
     <script type="text/javascript" src="assets/javascript/map.js"></script>
   </body>
 </html>

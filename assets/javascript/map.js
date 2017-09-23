@@ -1,7 +1,10 @@
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+        var start = $("#start").val().trim();
+        var end = $("#end").val().trim();
+        
         directionsService.route({
-           origin: "Orlando, FL",
-           destination: "Atlanta, GA",
+           origin: start,
+           destination: end,
           travelMode: 'DRIVING'
         }, function(response, status) {
           console.log(response);
@@ -22,8 +25,10 @@ function initMap() {
         });
         directionsDisplay.setMap(map);
 
-        
-        calculateAndDisplayRoute(directionsService, directionsDisplay);
-        
+        $(document).on("click", "#search-button", function(event){
+          event.preventDefault();
+          calculateAndDisplayRoute(directionsService, directionsDisplay);
+        });       
         
       }
+
