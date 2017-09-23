@@ -1,7 +1,8 @@
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+//============= Form Input Variables ================================
         var start = $("#start").val().trim();
         var end = $("#end").val().trim();
-        
+//===================================================================      
         directionsService.route({
            origin: start,
            destination: end,
@@ -11,13 +12,16 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
           if (status === 'OK') {
             directionsDisplay.setDirections(response);
             directionsDisplay.setPanel(document.getElementById('directions'));
-            console.log(directionsDisplay);
           } else {
             window.alert('Directions request failed due to ' + status);
           }
         });
       }
+      
 var infowindow;
+
+
+//Map Display
 function initMap() {
         var directionsService = new google.maps.DirectionsService;
         var directionsDisplay = new google.maps.DirectionsRenderer;
@@ -27,58 +31,39 @@ function initMap() {
         });
         directionsDisplay.setMap(map);
 
+       
+//======Geolocation Functionality===============================
         infoWindow = new google.maps.InfoWindow;
 
-        // if (navigator.geolocation) {
-        //   navigator.geolocation.getCurrentPosition(function(position) {
-        //     console.log(position)
-        //     var pos = {
-        //       lat: position.coords.latitude,
-        //       lng: position.coords.longitude
-        //     };
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            console.log(position)
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
 
-        //     infoWindow.setPosition(pos);
-        //     infoWindow.setContent('Location found.');
-        //     infoWindow.open(map);
-        //     map.setCenter(pos);
-        //   }, function() {
-        //     handleLocationError(true, infoWindow, map.getCenter());
-        //   });
-        // } else {
-        //   // Browser doesn't support Geolocation
-        //   handleLocationError(false, infoWindow, map.getCenter());
-        // }
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            infoWindow.open(map);
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
 
         $(document).on("click", "#search-button", function(event){
           event.preventDefault();
           calculateAndDisplayRoute(directionsService, directionsDisplay);
-        });       
+        }); 
+//==================================================================              
         
       }
 
-// function geolocation(position){
-//   infoWindow = new google.maps.InfoWindow;
-
-//         if (navigator.geolocation) {
-//           navigator.geolocation.getCurrentPosition(function(position) {
-//             var pos = {
-//               lat: position.coords.latitude,
-//               lng: position.coords.longitude
-//             };
-
-//             infoWindow.setPosition(pos);
-//             infoWindow.setContent('Location found.');
-//             infoWindow.open(map);
-//             map.setCenter(pos);
-//           }, function() {
-//             handleLocationError(true, infoWindow, map.getCenter());
-//           });
-//         } else {
-//           // Browser doesn't support Geolocation
-//           handleLocationError(false, infoWindow, map.getCenter());
-//         }
-// }
-
+//=======Error Handling 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
