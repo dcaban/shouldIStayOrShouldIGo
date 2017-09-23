@@ -2568,7 +2568,7 @@ if (Vel) {
     init: function (options) {
       var defaults = {
         onShow: null,
-        swipeable: false,
+        swipeable: true,
         responsiveThreshold: Infinity // breakpoint for swipeable
       };
       options = $.extend(defaults, options);
@@ -2624,7 +2624,7 @@ if (Vel) {
         // Change swipeable according to responsive threshold
         if (options.swipeable) {
           if (window_width > options.responsiveThreshold) {
-            options.swipeable = false;
+            options.swipeable = true;
           }
         }
 

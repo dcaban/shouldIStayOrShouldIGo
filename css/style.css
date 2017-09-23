@@ -149,7 +149,13 @@ a.bttn-dark:focus {
 }
 
 .indicator{
-  background-color: deepskyblue !important;
+  background-color: #0f002c !important;
+}
+.cardTab{
+  color: #ff0072 !important;
 }
 
+h1{
+  color: #0f002c;
+}
 
