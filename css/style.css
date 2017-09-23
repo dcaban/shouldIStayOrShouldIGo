@@ -155,7 +155,19 @@ a.bttn-dark:focus {
   color: #ff0072 !important;
 }
 
-h1{
+
+
+.aimg{
+  margin-top: 15px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.alink{
   color: #0f002c;
+}
+
+.card{
+  color: #0f002c ;
 }
 
