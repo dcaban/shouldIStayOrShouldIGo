@@ -1,6 +1,9 @@
-function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+//Coordinates of Miami, Florida. If this is the start point, then the directions did not take the user's location.
+var coords = {lat: 25.761, lng: -80.191};
+
+function calculateAndDisplayRoute(directionsService, directionsDisplay, coordinates) {
 //============= Form Input Variables ================================
-        var start = $("#start").val().trim();
+        var start = coords;
         var end = $("#end").val().trim();
 //===================================================================      
         directionsService.route({
@@ -8,7 +11,6 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
            destination: end,
           travelMode: 'DRIVING'
         }, function(response, status) {
-          console.log(response);
           if (status === 'OK') {
             directionsDisplay.setDirections(response);
             directionsDisplay.setPanel(document.getElementById('directions'));
@@ -18,9 +20,6 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         });
       }
       
-var infowindow;
-
-
 //Map Display
 function initMap() {
         var directionsService = new google.maps.DirectionsService;
@@ -37,16 +36,19 @@ function initMap() {
 
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
-            console.log(position)
+            
             var pos = {
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
 
-            infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
-            infoWindow.open(map);
+            // infoWindow.setPosition(pos);
+            // infoWindow.setContent('Location found.');
+            // infoWindow.open(map);
             map.setCenter(pos);
+//==========The user's coordinates are stored in the global variable, coords
+            coords = pos;
+
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
           });
@@ -58,7 +60,8 @@ function initMap() {
         $(document).on("click", "#search-button", function(event){
           event.preventDefault();
           calculateAndDisplayRoute(directionsService, directionsDisplay);
-        }); 
+        });
+        console.log(coordinates);
 //==================================================================              
         
       }
