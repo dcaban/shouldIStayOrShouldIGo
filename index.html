@@ -1,9 +1,11 @@
 <!DOCTYPE html>
+<html lang="en">
 
-<html >
 <head>
-  <meta charset="UTF-8">
-  <title>Should I Stay or Should I Go?</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Should I Stay or Should I Go?</title>
   
       <link rel="stylesheet" href="css/style.css">
 
@@ -11,7 +13,10 @@
 <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 
 <link rel="stylesheet" type="text/css" href="city-autocomplete.css"/>
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&language=en"></script>
+<script async defer
+   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFS1g6Cj2tADB3ENEVpXcJ1CIeb6nk1NE&callback=initMap">
+  </script>
+<!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&language=en"></script> -->
   
 </head>
 
@@ -55,15 +60,12 @@ $('input#city').cityAutocomplete();
     
      <!-- jQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script async defer
-     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFS1g6Cj2tADB3ENEVpXcJ1CIeb6nk1NE&callback=initMap">
-    </script>
 
     <script src="js/index.js"></script>
-    <script src="assets/javascript/map.js"></script>
 
 	
     <!--form test-->
+
 
 
 
@@ -81,6 +83,7 @@ $('input#city').cityAutocomplete();
   })();
 
 </script>
+
 
 
 
