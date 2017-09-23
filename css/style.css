@@ -171,3 +171,27 @@ a.bttn-dark:focus {
   color: #0f002c ;
 }
 
+.backbutton{
+  height: 35px;
+  width: 35px;
+  border-bottom: 5px solid #0f002c;
+  border-left: 5px solid #0f002c;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  border-top-right-radius: 50%;
+}
+.backbutton:hover {
+  border-top-right-radius: 80%;
+  background-color: rgba(0,230,130, 0.65);
+}
+.imgContainer{
+
+  min-height: 250px;
+  max-width: 250px;
+  background-color: white;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
