@@ -186,7 +186,7 @@ a.bttn-dark:focus {
 .backbutton:hover {
   border-top-right-radius: 100%;
   background-color: rgba(15,0,44, 0.30);
-  background: linear-gradient(to right, rgba(15,0,44, 0.20) , rgba(15,0,44, 0.00));
+  background: linear-gradient(rgba(15,0,44, 0.00) , rgba(15,0,44, 0.30));
 }
 .imgContainer{
 
