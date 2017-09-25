@@ -1,3 +1,16 @@
+
+
+$(document).ready(function(){
+    $('.scrollspy').scrollSpy()
+
+
+    $('.target').pushpin({
+        top: 0,
+        bottom: 1000,
+        offset: 0
+    });
+});
+
 // Initialize Firebase
 var config = {
     apiKey: "AIzaSyBGk9jfTHyJYiJKFWQcmcdi-V7mMBoVnKY",
@@ -12,46 +25,190 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-
 database.ref().on("value", function(snapshot) {
-    console.log(snapshot.val().check1);
-    // Then we console.log the value of snapshot
+//first checkbox
+    var check1 = (snapshot.val().check1)
+    var check2 = (snapshot.val().check2)
+    var check3 = (snapshot.val().check3)
+    var check4 = (snapshot.val().check4)
+    var check5 = (snapshot.val().check5)
+    var check6 = (snapshot.val().check6)
+    var check7 = (snapshot.val().check7)
+
     console.log(snapshot.val());
+
     //Check the value
-    if(snapshot.val().check1){
+    if((snapshot.val().check1) == true){
         $("#checkbox1").attr("checked","checked") ;
+
     }
 
-    // Then we change the html associated with the number.
-    // $("#checkbox1").html(snapshot.val().check1);
-    // // Then update the clickCounter variable with data from the database.
-    // clickCounter = snapshot.val().check1;
-    //
-    // // If there is an error that Firebase runs into -- it will be stored in the "errorObject"
-    // // Again we could have named errorObject anything we wanted.
+        $("#checkbox1").on("click", function() {
+            if (check1 === true){
+                database.ref().update({
+                    check1: false
+                })
+                }
+
+                else{
+                    database.ref().update({
+                        check1: true
+                    })
+
+
+            }
+        });
+//checkbox 2
+
+    if((snapshot.val().check2) == true){
+        $("#checkbox2").attr("checked","checked") ;
+
+    }
+
+        $("#checkbox2").on("click", function() {
+            if (check2 === true){
+                
+                database.ref().update({
+                    check2: false
+                })
+            }
+
+            else{
+                
+                database.ref().update({
+                    check2: true
+                })
+
+
+            }
+        });
+//Checkbox 3
+
+
+    if((snapshot.val().check3) == true){
+        $("#checkbox3").attr("checked","checked") ;
+
+    }
+
+        $("#checkbox3").on("click", function() {
+            if (check3 === true){
+                database.ref().update({
+                    check3: false
+                })
+            }
+
+            else{
+                database.ref().update({
+                    check3: true
+                })
+
+
+            }
+        });
+
+//Checkbox 4
+
+    if((snapshot.val().check4) == true){
+        $("#checkbox4").attr("checked","checked") ;
+
+    }
+
+        $("#checkbox4").on("click", function() {
+            if (check4 === true){
+                
+                database.ref().update({
+                    check4: false
+                })
+            }
+
+            else{
+                
+                database.ref().update({
+                    check4: true
+                })
+
+
+            }
+        });
+
+//Checkbox 5
+
+    if((snapshot.val().check5) == true){
+        $("#checkbox5").attr("checked","checked") ;
+
+    }
+
+        $("#checkbox5").on("click", function() {
+            if (check5 === true){
+                database.ref().update({
+                    check5: false
+                })
+            }
+
+            else{
+                database.ref().update({
+                    check5: true
+                })
+
+
+            }
+        });
+
+//Checkbox 6
+
+    if((snapshot.val().check6) == true){
+        $("#checkbox6").attr("checked","checked") ;
+
+    }
+
+        $("#checkbox6").on("click", function() {
+            if (check6 === true){
+                database.ref().update({
+                    check6: false
+                })
+            }
+
+            else{
+                database.ref().update({
+                    check6: true
+                })
+
+
+            }
+        });
+
+//Checkbox 6
+
+    if((snapshot.val().check7) == true){
+        $("#checkbox7").attr("checked","checked") ;
+
+    }
+
+        $("#checkbox7").on("click", function() {
+            if (check7 === true){
+                database.ref().update({
+                    check7: false
+                })
+            }
+
+            else{
+                database.ref().update({
+                    check7: true
+                })
+
+
+            }
+        });
+
+
 
 
 });
 
 
-//
-// $("#checkbox1").on("click", function() {
 
-//     if (check1 == false){
-//             console.log("I am clicked");
-//             database.ref().set({
-//                 check1: true;
-//             });
-//
-//         }
-//         if(database.ref().snapshot.val(check1){
-//             console.log("I am not clicked")
-//             clicked = false
-//             database.ref().set({
-//                 check1: clicked
-//             });
-//
-//
-//     });
+
+
+
 
 

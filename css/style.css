@@ -172,19 +172,21 @@ a.bttn-dark:focus {
 }
 
 .backbutton{
+
   height: 35px;
   width: 35px;
   border-bottom: 5px solid #0f002c;
   border-left: 5px solid #0f002c;
   transform: rotate(45deg);
   position: absolute;
-  top: 20px;
+  top: 40px;
   left: 20px;
-  border-top-right-radius: 50%;
+  border-top-right-radius: 80%;
 }
 .backbutton:hover {
-  border-top-right-radius: 80%;
-  background-color: rgba(0,230,130, 0.65);
+  border-top-right-radius: 100%;
+  background-color: rgba(15,0,44, 0.30);
+  background: linear-gradient(to right, rgba(15,0,44, 0.20) , rgba(15,0,44, 0.00));
 }
 .imgContainer{
 
@@ -200,3 +202,26 @@ a.bttn-dark:focus {
   margin-top: 20px;
   max-height: 180px;
 }
+
+[type="checkbox"]:checked+label:before {
+  top: -4px;
+  left: -5px;
+  width: 12px;
+  height: 22px;
+  border-top: 2px solid transparent;
+  border-left: 2px solid transparent;
+  border-right: 2px solid #0F002C;
+  border-bottom: 2px solid #00E676;
+  -webkit-transform: rotate(40deg);
+  transform: rotate(40deg);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-origin: 100% 100%;
+  transform-origin: 100% 100%
+}
+
+.contents {
+
+}
+
+
