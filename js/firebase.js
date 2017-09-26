@@ -1,7 +1,13 @@
 
 
 $(document).ready(function(){
-    $('.scrollspy').scrollSpy()
+
+    // $('.scrollspy').scrollSpy()
+    $('.scrollspy').scrollSpy({
+        scrollOffset:240
+    });
+
+
 
 
     $('.target').pushpin({

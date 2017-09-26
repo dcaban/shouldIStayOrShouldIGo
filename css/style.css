@@ -178,9 +178,9 @@ a.bttn-dark:focus {
   border-bottom: 5px solid #0f002c;
   border-left: 5px solid #0f002c;
   transform: rotate(45deg);
-  position: absolute;
-  top: 40px;
-  left: 20px;
+  position: fixed;
+  top: 50px;
+  left: 25px;
   border-top-right-radius: 80%;
 }
 .backbutton:hover {
@@ -220,8 +220,8 @@ a.bttn-dark:focus {
   transform-origin: 100% 100%
 }
 
-.contents {
-
+#empty {
+  height: 400px;
 }
 
 
