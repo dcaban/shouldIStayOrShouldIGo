@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyB1sBPX4i_pqV8q24NxvHTl40vesylu-js"></script> -->
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFS1g6Cj2tADB3ENEVpXcJ1CIeb6nk1NE&callback=initMap"></script> -->
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hotels + Maps</title>
+</head>
+
+<body>
+    <!-- Firts Container with the Form -->
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m4 l6">
+                <form>
+                    <!-- Form Creation to enter the City to go -->
+                    <div class="input-field col s12">
+                        <input placeholder="What City" id="city" type="text" class="validate">
+                        <label for="destination_city"></label>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    </button>
+            </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    <!-- ******************************** -->
+    <div class="row">
+        <div class="col m3 l3" id="hotel_container">
+            HOTEL CONTAINER
+        </div>
+        <div class="col m9 l9" id="map">
+            MAP CONTAINER
+        </div>
+
+
+    </div>
+
+    <!-- Scripts Calls -->
+    <script src="./logic.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1sBPX4i_pqV8q24NxvHTl40vesylu-js&callback=initMap"></script>
+
+</body>
+
+</html>
