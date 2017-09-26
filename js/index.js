@@ -25,9 +25,17 @@ $('.bttn-dark').click(function(){
 });
 
 
-//$('input#city').cityAutocomplete();
+// Variables declarations
+var api_key = "OuGqGq3usEeU5ErOgA0GhDU53AEuQ2HZ"; // Api key coming from Amadeus provider hotel search
+var latitude = 0;
+var longitud = 0;
+var qta = "5";
+var date_in = "2017-09-24";
+var date_out = "2017-09-27";
+var show = "";
+var description_line = "";
 
-   //MAP 
+
 
    //Coordinates of Miami, Florida. If this is the start point, then the directions did not take the user's location.
 var coords = {lat: 25.761, lng: -80.191};
@@ -118,3 +126,68 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
                               'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map);
       }
+
+// ****************GEOCODE FUNCTION******************
+//Function to covert address to Latitude and Longitude
+function getLocation(address) {
+    var deferred = $.Deferred(); // This would help to wayt until the function is done and have results
+    var city = address;
+    var api_google_key = "AIzaSyB1sBPX4i_pqV8q24NxvHTl40vesylu-js"
+    var google_url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + city + "&key=" + api_google_key;
+    $.ajax({
+        url: google_url,
+        method: "GET"
+    }).done(function(response) {
+        var result_map = response.status;
+        var coordinates = response.results[0].geometry.location;
+        console.log(result_map);
+        if (result_map == "OK") {
+            var latLngArray = [+coordinates.lat, +coordinates.lng];
+            deferred.resolve(latLngArray);
+            console.log(latLngArray);
+        } else {
+            deferred.rejected(result_map);
+        }
+    })
+    return deferred.promise(); //is returning the promise already completed and send the array as result
+}
+
+// **************END GEOCODE FUNCTION*****************
+getLocation('Miami').then(function(resultArray) {
+    // ************************************************************
+    // Everithing on this section after the result from Geolocation
+    // ************************************************************
+    latitude = resultArray[0];
+    longitud = resultArray[1];
+
+    var query_url = "http://api.sandbox.amadeus.com/v1.2/hotels/search-circle?latitude=" + latitude + "&longitude=" + longitud + "&radius=50&check_in=" + date_in + "&check_out=" + date_out + "&number_of_results=" + qta + "&apikey=" + api_key;
+    console.log(query_url);
+    // API call back
+    $.ajax({
+        url: query_url,
+        method: "GET"
+    }).done(function(response) {
+        console.log(response);
+        var hotels = response.results;
+        console.log(hotels);
+        for (var w = 0; w < hotels.length; w++) {
+            var hotel_div = $("<div>");
+            var hotel_name = hotels[w].property_name;
+            hotel_div.append(hotel_name);
+            var description = hotels[w].rooms[0].descriptions;
+            description.forEach(function(element) {
+                console.log(element);
+            });
+            console.log(description);
+            var rating_check = $("<p>").text("Daily Rate " + hotels[w].rooms[0].rates[0].price); //add the daily rate
+            var total_price = " Total Amount " + hotels[w].total_price.amount;
+            rating_check.append(total_price);
+
+            hotel_div.append(rating_check);
+            $("#hotel_container").append(hotel_div); // Printing out the final result into the div
+        }
+
+    });
+}, function(error) {
+    console.error("there is an error " + error);
+});

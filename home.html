@@ -6,15 +6,20 @@
   
       <link rel="stylesheet" href="css/homestyle.css">
 
+      <!--Google Icons-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
  
        <!-- Compiled and minified CSS MATERIALIZED -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+     <!--Hotel link that I have to idea what is for-->
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   
 </head>
 
 <body>
- 
+
 
 
 <!--Carrousel-->
@@ -24,18 +29,23 @@
       <!--<a class="btn waves-effect white grey-text darken-text-2">button</a>-->
     </div>
 
-    <!--PANEL ONE-->
 
-    <div class="carousel-item white-text" href="#one!">
-        <h3 id="logo">ShouldIStayorShouldIGo
-        </h3>
-         <hr id="inline">
+    <!-- particles.js container -->
+        <div id="particles-js">
 
-        <div class="text-line">
-        <span id="text">We understand that in moments of depair, decisions can be frustrating. Here, we are dedicated to help you make the best ones.</span></div>
-        
-         <a href="#two!" class="bttn">GET STARTED</a>
+            <!--PANEL ONE-->
+            <div class="carousel-item white-text" href="#one!">
 
+                <h3 id="logo">ShouldIStayorShouldIGo
+                </h3>
+                 <hr id="inline">
+
+                <div class="text-line">
+                <span id="text">We understand that in moments of depair, decisions can be frustrating. Here, we are dedicated to help you make the best ones.</span></div>
+                
+                 <a href="#two!" class="bttn">GET STARTED</a>
+
+            </div>
     </div>
 
     <!--PANEL TWO-->
@@ -65,22 +75,64 @@
      
     <div id="map"></div>
 
+    <ul id="slide-out" class="side-nav fixed black-text">
+          
+
+            <!--card 1-->
+                    <div class="card small hoverable">
+                      <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="https://www.safarihotelsnamibia.com/wp-content/uploads/2014/11/Safari-Court-Hotel-Pool.jpg">
+                    </div>
+                    <div class="card-content">
+                       <span class="card-title activator grey-text text-darken-4">Safari Namibia<i class="material-icons right">more_vert</i></span>
+                <p><a href="#">This is a link</a></p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+              </div>
+            </div>
+
+              <!--card 2-->
+                    <div class="card small hoverable">
+                      <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="https://www.safarihotelsnamibia.com/wp-content/uploads/2014/11/Safari-Court-Hotel-Pool.jpg">
+                    </div>
+                    <div class="card-content">
+                       <span class="card-title activator grey-text text-darken-4">Safari Namibia<i class="material-icons right">more_vert</i></span>
+                <p><a href="#">This is a link</a></p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+              </div>
+            </div>
 
 
+            <li><div id="hotel_container"></div>
+
+
+    </ul>
 
     </div>
 
 
     <!--PANEL FOUR-->
 
-    <div class="carousel-item blue white-text" href="#four!">
-      <h2>Fourth Panel</h2>
-      <p class="white-text">This is your fourth panel</p>
-    </div>
+    <div class="carousel-item white-text" href="#four!">
+
+
   </div>
 
 
+ <!-- ******************************** -->
 
+ <!-- scripts -->
+<script src="particles.js"></script>
+<script src="js/app.js"></script>
+
+
+<!-- stats.js -->
 
 <!-- jQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

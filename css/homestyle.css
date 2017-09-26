@@ -1,10 +1,9 @@
 body {
  
   font-family: "Source Sans Pro", sans-serif;
-  background: #F5F0FF;
+  background: #24252a;
 
 }
-
 h1 {
 	margin:0;
 }
@@ -20,8 +19,9 @@ margin:0;
 }
 
 .dark {
+
   background: #24252A;
-   min-width: 90vh;
+   min-width: 100vh;
 }
 
 .rose {
@@ -239,6 +239,7 @@ a.bttn-dark:focus {
 input[type=text] {
   background: #24252A;
   color:#644cad;
+  border: 3px solid #644cad !important;
  
 
 }
