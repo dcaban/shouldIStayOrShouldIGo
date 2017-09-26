@@ -15,6 +15,8 @@ $(document).ready(function(){
         bottom: 1000,
         offset: 0
     });
+
+
 });
 
 // Initialize Firebase
@@ -46,7 +48,11 @@ database.ref().on("value", function(snapshot) {
     //Check the value
     if((snapshot.val().check1) == true){
         $("#checkbox1").attr("checked","checked") ;
+        $("#sideWater").css('text-decoration', 'line-through');
 
+    }
+    else{
+        $("#sideWater").css('text-decoration', 'none');
     }
 
         $("#checkbox1").on("click", function() {
@@ -68,8 +74,14 @@ database.ref().on("value", function(snapshot) {
 
     if((snapshot.val().check2) == true){
         $("#checkbox2").attr("checked","checked") ;
+        $("#sideFood").css('text-decoration', 'line-through');
 
     }
+    else{
+        $("#sideFood").css('text-decoration', 'none');
+    }
+
+
 
         $("#checkbox2").on("click", function() {
             if (check2 === true){
@@ -93,7 +105,11 @@ database.ref().on("value", function(snapshot) {
 
     if((snapshot.val().check3) == true){
         $("#checkbox3").attr("checked","checked") ;
+        $("#sideLights").css('text-decoration', 'line-through');
 
+    }
+    else{
+        $("#sideLights").css('text-decoration', 'none');
     }
 
         $("#checkbox3").on("click", function() {
@@ -116,7 +132,11 @@ database.ref().on("value", function(snapshot) {
 
     if((snapshot.val().check4) == true){
         $("#checkbox4").attr("checked","checked") ;
+        $("#sideMedication").css('text-decoration', 'line-through');
 
+    }
+    else{
+        $("#sideMedication").css('text-decoration', 'none');
     }
 
         $("#checkbox4").on("click", function() {
@@ -141,7 +161,11 @@ database.ref().on("value", function(snapshot) {
 
     if((snapshot.val().check5) == true){
         $("#checkbox5").attr("checked","checked") ;
+        $("#sideHygiene").css('text-decoration', 'line-through');
 
+    }
+    else{
+        $("#sideHygiene").css('text-decoration', 'none');
     }
 
         $("#checkbox5").on("click", function() {
@@ -164,7 +188,11 @@ database.ref().on("value", function(snapshot) {
 
     if((snapshot.val().check6) == true){
         $("#checkbox6").attr("checked","checked") ;
+        $("#sideFirstAid").css('text-decoration', 'line-through');
 
+    }
+    else{
+        $("#sideFirstAid").css('text-decoration', 'none');
     }
 
         $("#checkbox6").on("click", function() {
@@ -183,11 +211,15 @@ database.ref().on("value", function(snapshot) {
             }
         });
 
-//Checkbox 6
+//Checkbox 7
 
     if((snapshot.val().check7) == true){
         $("#checkbox7").attr("checked","checked") ;
+        $("#sidePet").css('text-decoration', 'line-through');
 
+    }
+    else{
+        $("#sidePet").css('text-decoration', 'none');
     }
 
         $("#checkbox7").on("click", function() {
