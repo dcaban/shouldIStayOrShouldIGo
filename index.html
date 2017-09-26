@@ -9,84 +9,48 @@
   
       <link rel="stylesheet" href="css/style.css">
 
-<!--AUTOCOMPLETE FORM-->
-<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-
-<link rel="stylesheet" type="text/css" href="city-autocomplete.css"/>
-
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&language=en"></script>
   
 </head>
 
 <body>
   
+<div id="map"></div>
 
+<div id="directions"></div>
 
- <div class="flex">
-
-
-		<div class="flex pink">
-				 <a href="#0" class="bttn">STAY</a>
-		</div>
-
-		
-
-		<div class="flex dark">
+<div class="flex">
+      <div class="flex pink">
+      				 <a href="#0" class="bttn">STAY</a>
+      </div>
+      		<div class="flex dark">
 		 		 
 
 <!--INPUT FORM-->
- <div class="dark-form">
+         <div class="dark-form">
 	
-<input type="text" class="input-dark line-1 anim-typewriter " placeholder="Where would you like to go?" id="city" name="city" autocomplete="off" data-country="us">
+          <input type="text" class="input-dark line-1 anim-typewriter search" id="end" placeholder="Where would you like to go?" id="city" name="city" autocomplete="off" data-country="us">
 
-
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="jquery.city-autocomplete.js" type="text/javascript"></script>
-
-
-
-<script>
-$('input#city').cityAutocomplete();
-</script>
 </div>
 
 <a href="#0" class="bttn-dark">GO</a>
+</div>
+
+</div>
+
+   
+<!--Map-->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script async defer
+   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFS1g6Cj2tADB3ENEVpXcJ1CIeb6nk1NE&callback=initMap">
+  </script>
+  
+  
+    <script type="text/javascript" src="assets/javascript/map.js"></script>
 
 
-				
- </div>
-    
-     <!-- jQuery -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <script src="js/index.js"></script>
-
-	
-    <!--form test-->
+<!--Buttons-->
+   <script src="js/index.js"></script>
 
 
-
-
-
-
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-36251023-1']);
-  _gaq.push(['_setDomainName', 'jqueryscript.net']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-
-
-
-
-
-</body>
+  </body>
 </html>
