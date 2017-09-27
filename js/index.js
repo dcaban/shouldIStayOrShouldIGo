@@ -70,33 +70,6 @@ function initMap() {
     });
     directionsDisplay.setMap(map);
 
-
-    //======Geolocation Functionality===============================
-    infoWindow = new google.maps.InfoWindow;
-
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-
-            var pos = {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude
-            };
-
-            // infoWindow.setPosition(pos);
-            // infoWindow.setContent('Location found.');
-            // infoWindow.open(map);
-            map.setCenter(pos);
-            //==========The user's coordinates are stored in the global variable, coords
-            coords = pos;
-
-        }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
-        });
-    } else {
-        // Browser doesn't support Geolocation
-        handleLocationError(false, infoWindow, map.getCenter());
-    }
-
     // ==========================GEOCODE FUNCTION=============================
     //Function to covert address to Latitude and Longitude
     function getLocation(address) {
@@ -141,8 +114,31 @@ function initMap() {
             console.log("enter pressed");
 
             event.preventDefault();
-            // =====This function would call the routing on the map if the user press "ENTER"====
-            calculateAndDisplayRoute(directionsService, directionsDisplay);
+                        
+            //Geolocation Functionality
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+
+                    var pos = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+
+                    map.setCenter(pos);
+                    //The user's coordinates are stored in the global variable, coords
+                    coords = pos;
+
+                    //When the user allows geolocation, the route is displayed
+                    calculateAndDisplayRoute(directionsService, directionsDisplay);
+
+                }, function() {
+                    handleLocationError(true, infoWindow, map.getCenter());
+                });
+            } else {
+                // Browser doesn't support Geolocation
+                handleLocationError(false, infoWindow, map.getCenter());
+            };
+            
             // =====This function would call the hotel search 
             getLocation($("#end").val().trim()).then(function(resultArray) {
                 // ************************************************************
@@ -184,17 +180,15 @@ function initMap() {
             });
         }
     });
-
-    console.log(coordinates);
-    //==================================================================              
-
 }
 
-//=======Error Handling 
+//Geolocation error Handling 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
     infoWindow.setContent(browserHasGeolocation ?
-        'Error: The Geolocation service failed.' :
+        //if true
+        'Error: The Geolocation service failed.' : 
+        //if false         
         'Error: Your browser doesn\'t support geolocation.');
     infoWindow.open(map);
 }
