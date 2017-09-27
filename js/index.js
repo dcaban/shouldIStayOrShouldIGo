@@ -44,7 +44,6 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay, coordina
     //============= Form Input Variables ================================
     var start = coords;
     var end = $("#end").val().trim();
-    // var end = $("#end").val().trim();
     //===================================================================      
     directionsService.route({
         origin: start,
@@ -114,7 +113,7 @@ function initMap() {
             console.log("enter pressed");
 
             event.preventDefault();
-                        
+
             //Geolocation Functionality
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function(position) {
@@ -138,7 +137,7 @@ function initMap() {
                 // Browser doesn't support Geolocation
                 handleLocationError(false, infoWindow, map.getCenter());
             };
-            
+
             // =====This function would call the hotel search 
             getLocation($("#end").val().trim()).then(function(resultArray) {
                 // ************************************************************
@@ -158,19 +157,64 @@ function initMap() {
                     var hotels = response.results;
                     console.log(hotels);
                     for (var w = 0; w < hotels.length; w++) {
-                        var hotel_div = $("<div>");
-                        var hotel_name = hotels[w].property_name;
-                        hotel_div.append(hotel_name);
-                        var description = hotels[w].rooms[0].descriptions;
-                        description.forEach(function(element) {
-                            console.log(element);
-                        });
-                        console.log(description);
-                        var rating_check = $("<p>").text("Daily Rate " + hotels[w].rooms[0].rates[0].price); //add the daily rate
-                        var total_price = " Total Amount " + hotels[w].total_price.amount;
-                        rating_check.append(total_price);
+                        var hotel_div = $("<div>"); // main Div container
+                        hotel_div.addClass("card small hoverable");
+                        var hotel_div2 = $("<div>"); //1 level of div
+                        hotel_div2.addClass("card-image waves-effect waves-block waves-light")
+                        var hotel_img = $("<img>");
+                        hotel_img.addClass('class="activator"');
+                        hotel_img.attr("src", "https://www.safarihotelsnamibia.com/wp-content/uploads/2014/11/Safari-Court-Hotel-Pool.jpg");
+                        hotel_div2.append(hotel_img)
+                        hotel_div.append(hotel_div2);
+                        ////////DIV3////////////////
+                        var hotel_div3 = $("<div>"); //div for content
+                        hotel_div3.addClass("card-content");
+                        //span tag
+                        var span = $("<span>");
+                        span.addClass("card-title activator grey-text text-darken-4");
+                        span.text(hotels[w].property_name);
+                        var itag = $("<i>");
+                        itag.addClass("material-icons right");
+                        itag.text("more_vert");
+                        span.append(itag);
+                        //hiperlinktag
+                        var hiperlink = $("<p>");
+                        var alink = $("<a>");
+                        alink.attr("href", hotels[w]._links.more_rooms_at_this_hotel.href);
+                        alink.text("more rooms");
+                        hiperlink.append(alink);
+                        hotel_div3.append(span);
+                        hotel_div3.append(hiperlink);
+                        hotel_div.append(hotel_div3);
+                        ////////DIV4////////////////
+                        var hotel_div4 = $("<div>");
+                        hotel_div4.addClass("card-reveal");
+                        var span2 = $("<span>");
+                        span2.addClass("card-title grey-text text-darken-4");
+                        span2.text("Description and Price");
+                        var itag2 = $("<i>");
+                        itag2.addClass("material-icons right");
+                        itag2.text("close");
+                        span2.append(itag2);
+                        var rating_check = $("<p>").text("Daily Rate " + hotels[w].rooms[0].rates[0].price);
+                        var total_price = $("<p>").text(" Total Amount " + hotels[w].total_price.amount);
+                        rating_check.attr("id", "card_description_hotel");
+                        total_price.attr("id", "card_description_hotel");
+                        span2.append(total_price);
+                        span2.append(rating_check);
 
-                        hotel_div.append(rating_check);
+
+                        var description = hotels[w].rooms[0].descriptions;
+                        var string = "";
+                        description.forEach(function(element) {
+                            string = string + element;
+                        });
+                        var description_final = $("<p>").text(string);
+                        console.log(string);
+                        description_final.attr("id", "card_description_hotel");
+                        span2.append(description_final);
+                        hotel_div4.append(span2);
+                        hotel_div.append(hotel_div4);
                         $("#hotel_container").append(hotel_div); // Printing out the final result into the div
                     }
 
@@ -187,7 +231,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
     infoWindow.setContent(browserHasGeolocation ?
         //if true
-        'Error: The Geolocation service failed.' : 
+        'Error: The Geolocation service failed.' :
         //if false         
         'Error: Your browser doesn\'t support geolocation.');
     infoWindow.open(map);
