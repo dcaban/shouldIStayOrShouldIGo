@@ -10,10 +10,11 @@ $('.carousel.carousel-slider').carousel({fullWidth: true});
 $('.bttn').click(function(){
    $('.carousel').carousel('next');
 
-
+});
+$('.bttn-stay').click(function(){
+   $('.carousel').carousel('prev',2);
 
 });
-
 
 
 });

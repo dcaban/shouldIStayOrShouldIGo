@@ -64,13 +64,11 @@ font-family: Roboto;
 font-style: black;
 color:#24252A;
 margin-top: 20%;
+color: #ff0072;
+
  
 }
 
-h3:hover {
-background-color: #ff0072;
-
-}
 
 #subtitle {
 
@@ -275,6 +273,87 @@ color: #644cad;
   to{border-right-color: transparent;}
 }
 
-/*Flex Alignment*/
+/*Back Button*/
+
+.backbutton{
+  
+  height: 35px;
+  width: 35px;
+  border-bottom: 5px solid #ff0072;
+  border-left: 5px solid #ff0072;
+  transform: rotate(45deg);
+  position: fixed !important;
+  top: 50px;
+  left: 25px;
+  border-top-right-radius: 80%;
+  color: #ff0072;
+}
+.backbutton:hover {
+  border-top-right-radius: 100%;
+  background-color: rgba(15,0,44, 0.30);
+  background: linear-gradient(rgba(15,0,44, 0.00) , rgba(15,0,44, 0.30));
+    color: #ff0072;
+}
+
+/*Cards*/
+
+.indicator{
+  background-color: #0f002c !important;
+}
+.cardTab{
+  color: #ff0072 !important;
+}
+
+
+
+.aimg{
+  margin-top: 15px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.alink{
+  color: #0f002c;
+}
+
+.card{
+  color: #0f002c ;
+}
+
+.imgContainer{
+
+  min-height: 250px;
+  max-width: 250px;
+  background-color: white;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+[type="checkbox"]:checked+label:before {
+  top: -4px;
+  left: -5px;
+  width: 12px;
+  height: 22px;
+  border-top: 2px solid transparent;
+  border-left: 2px solid transparent;
+  border-right: 2px solid #0F002C;
+  border-bottom: 2px solid #00E676;
+  -webkit-transform: rotate(40deg);
+  transform: rotate(40deg);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-origin: 100% 100%;
+  transform-origin: 100% 100%
+}
+
+#empty {
+  height: 400px;
+}
+
+#scrollable{
+
+  overflow-y:auto;
+}
 
 
