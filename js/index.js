@@ -180,7 +180,7 @@ function initMap() {
     // ======================END GEOCODE FUNCTION============================
 
     //Function that sets a hotel as a destination
-    $(document).on("click", ".card-content", function(event){
+    $(document).on("click", ".hotel-card-content", function(event){
         var hotelLat = $(this).attr("lat");
         var hotelLng = $(this).attr("lng");
         hotelLat = parseFloat(hotelLat);
@@ -260,7 +260,7 @@ function initMap() {
                         hotel_div.append(hotel_div2);
                         ////////DIV3////////////////
                         var hotel_div3 = $("<div>"); //div for content
-                        hotel_div3.addClass("card-content");
+                        hotel_div3.addClass("card-content hotel-card-content");
                         //Hotel location for Google Maps
                         console.log(hotels[w].location);
                         hotel_div3.attr("lat", hotels[w].location.latitude);
