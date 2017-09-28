@@ -16,6 +16,11 @@ $(document).ready(function(){
         offset: 0
     });
 
+    $('.bttn-stay').on("click", function(){
+        $(".carousel").addClass('big');
+        $(".carousel-item").addClass('big');
+    });
+
 
 });
 
