@@ -341,6 +341,11 @@ input::placeholder {
 #empty {
     height: 400px;
 }
+.table-of-contents{
+    position: fixed!important;
+    top: 10px!important;
+    right: 20px!important;
+}
 
 #scrollable {
     overflow-y: auto;
