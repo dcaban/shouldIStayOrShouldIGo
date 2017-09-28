@@ -25,9 +25,6 @@ $('.bttn-dark').click(function() {
     $('.input-dark').fadeIn(2000);
 });
 
-
-
-
 // Variables declarations
 var api_key = "OuGqGq3usEeU5ErOgA0GhDU53AEuQ2HZ"; // Api key coming from Amadeus provider hotel search
 var latitude = 0;
@@ -42,10 +39,12 @@ var description_line = "";
 //Coordinates of Miami, Florida. If this is the start point, then the directions did not take the user's location.
 var coords = { lat: 25.761, lng: -80.191 };
 
-function calculateAndDisplayRoute(directionsService, directionsDisplay, coordinates) {
+function calculateAndDisplayRoute(directionsService, directionsDisplay, dest) {
     //============= Form Input Variables ================================
     var start = coords;
-    var end = $("#end").val().trim();
+    var end = dest;
+
+    console.log(end)
     //===================================================================      
     directionsService.route({
         origin: start,
@@ -180,11 +179,20 @@ function initMap() {
 
     // ======================END GEOCODE FUNCTION============================
 
+    //Function that sets a hotel as a destination
+    $(document).on("click", ".card-content", function(event){
+        var hotelLat = $(this).attr("lat");
+        var hotelLng = $(this).attr("lng");
+        hotelLat = parseFloat(hotelLat);
+        hotelLng = parseFloat(hotelLng);
+        console.log(hotelLat);
 
-    // ==================ACTION BUTTONS SEARCH from FORM=====================
-    $(document).on("click", "#search-button", function(event) {
-        event.preventDefault();
-        calculateAndDisplayRoute(directionsService, directionsDisplay);
+        var hotelCoords = {
+            lat: hotelLat,
+            lng: hotelLng
+        }
+        console.log(hotelCoords);
+        calculateAndDisplayRoute(directionsService, directionsDisplay, hotelCoords);
     });
 
     // FUNCTION TO START MAP AND HOTELS
@@ -210,9 +218,9 @@ function initMap() {
                     map.setCenter(pos);
                     //The user's coordinates are stored in the global variable, coords
                     coords = pos;
-
+                    var destination = $("#end").val().trim();
                     //When the user allows geolocation, the route is displayed
-                    calculateAndDisplayRoute(directionsService, directionsDisplay);
+                    calculateAndDisplayRoute(directionsService, directionsDisplay, destination);
 
                 }, function() {
                     handleLocationError(true, infoWindow, map.getCenter());
@@ -253,6 +261,10 @@ function initMap() {
                         ////////DIV3////////////////
                         var hotel_div3 = $("<div>"); //div for content
                         hotel_div3.addClass("card-content");
+                        //Hotel location for Google Maps
+                        console.log(hotels[w].location);
+                        hotel_div3.attr("lat", hotels[w].location.latitude);
+                        hotel_div3.attr("lng", hotels[w].location.longitude);
                         //span tag
                         var span = $("<span>");
                         span.addClass("card-title activator");
@@ -287,7 +299,6 @@ function initMap() {
                         span2.append(total_price);
                         span2.append(rating_check);
 
-
                         var description = hotels[w].rooms[0].descriptions;
                         var string = "";
                         description.forEach(function(element) {
@@ -301,7 +312,6 @@ function initMap() {
                         hotel_div.append(hotel_div4);
                         $("#hotel_container").append(hotel_div); // Printing out the final result into the div
                     }
-
                 });
             }, function(error) {
                 console.error("there is an error " + error);
@@ -318,5 +328,5 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         'Error: The Geolocation service failed.' :
         //if false         
         'Error: Your browser doesn\'t support geolocation.');
-    infoWindow.open(map);
+    infoWindow.open(map)
 }
