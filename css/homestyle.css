@@ -342,11 +342,12 @@ input::placeholder {
 
 #empty {
     height: 400px;
+    margin-bottom: -40px;
 }
 .big {
     min-height: 2500px !important;
     /*background-color: #39414D;*/
-    background: linear-gradient(rgba(57, 65, 77, 0.70), rgba(57, 65, 77, 1.0), rgba(57, 65, 77, 1.0), rgba(57, 65, 77, 1.0));
+    background: linear-gradient(rgba(27, 26, 60, 0.40), rgba(27, 26, 60, 1.0), rgba(27, 26, 60, 1.0), rgba(27, 26, 60, 1.0));
 }
 
 /*.table-of-contents{*/
