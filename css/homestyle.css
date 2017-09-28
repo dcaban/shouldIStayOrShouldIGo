@@ -310,6 +310,8 @@ input::placeholder {
 
 .card {
     color: #0f002c;
+    margin: 20px !important;
+    padding-bottom: 0px!important;
 }
 
 .imgContainer {
@@ -341,11 +343,17 @@ input::placeholder {
 #empty {
     height: 400px;
 }
-.table-of-contents{
-    position: fixed!important;
-    top: 10px!important;
-    right: 20px!important;
+.big {
+    min-height: 2500px !important;
+    /*background-color: #39414D;*/
+    background: linear-gradient(rgba(57, 65, 77, 0.70), rgba(57, 65, 77, 1.0), rgba(57, 65, 77, 1.0), rgba(57, 65, 77, 1.0));
 }
+
+/*.table-of-contents{*/
+    /*position: fixed!important;*/
+    /*top:100px!important;*/
+    /*right: 20px!important;*/
+/*}*/
 
 #scrollable {
     overflow-y: auto;
@@ -363,21 +371,12 @@ input::placeholder {
     height: 200px !important;
 }
 
-.card {
-    background-color: #24252A !important;
-    margin: 0 !important;
-}
 
-.card .card-content {
+
+.card-content {
     font-size: 18px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    display: inline-block;
-    text-align: center;
-    font-weight: bold;
-    padding: 14px 0px;
-    border: 3px solid #644cad;
-   
 }
 
 .card-title {
