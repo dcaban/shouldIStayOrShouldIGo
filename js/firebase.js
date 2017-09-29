@@ -17,8 +17,8 @@ $(document).ready(function(){
     });
 
     $('.bttn-stay').on("click", function(){
-        $(".carousel").addClass('big');
-        $(".carousel-item").addClass('big');
+        $(".carousel").addClass('big4');
+        $(".carousel-item").addClass('big4');
     });
 
 

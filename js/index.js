@@ -16,9 +16,9 @@ $(document).ready(function() {
 
     });
 
-
 });
 
+var hotelArray = ["../assets/images/hotel1.jpg", "../assets/images/hotel2.jpg", "../assets/images/hotel3.jpg", "../assets/images/hotel4.png", "../assets/images/hotel5.jpg"];
 $('.bttn-dark').click(function() {
 
     $('.bttn-dark').hide();
@@ -254,8 +254,9 @@ function initMap() {
                         var hotel_div2 = $("<div>"); //1 level of div
                         hotel_div2.addClass("card-image waves-effect waves-block waves-light")
                         var hotel_img = $("<img>");
+
                         hotel_img.addClass('class="activator"');
-                        hotel_img.attr("src", "https://www.safarihotelsnamibia.com/wp-content/uploads/2014/11/Safari-Court-Hotel-Pool.jpg");
+                        hotel_img.attr("src", "../assets/images/hotel1.jpg");
                         hotel_div2.append(hotel_img)
                         hotel_div.append(hotel_div2);
                         ////////DIV3////////////////
@@ -267,11 +268,9 @@ function initMap() {
                         hotel_div3.attr("lng", hotels[w].location.longitude);
                         //span tag
                         var span = $("<span>");
-                        span.addClass("card-title activator");
+                        span.addClass("card-title activator card-text");
                         span.text(hotels[w].property_name);
                         var itag = $("<i>");
-                        itag.addClass("material-icons right");
-                        itag.text("more_vert");
                         span.append(itag);
                         //hiperlinktag
                         var hiperlink = $("<p>");
@@ -286,7 +285,7 @@ function initMap() {
                         var hotel_div4 = $("<div>");
                         hotel_div4.addClass("card-reveal");
                         var span2 = $("<span>");
-                        span2.addClass("card-title grey-text text-darken-4");
+                        span2.addClass("card-title grey-text text-darken-4 hotel-card-title");
                         span2.text("Description and Price");
                         var itag2 = $("<i>");
                         itag2.addClass("material-icons right");

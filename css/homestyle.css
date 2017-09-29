@@ -524,3 +524,17 @@ body.thin::-webkit-scrollbar {
 ::-webkit-scrollbar-thumb:window-inactive {
     background: rgba(100,100,100,0.4); 
 }
+
+.card-text{
+   font-size: 14px!important;
+}
+
+.card .card-title {
+    font-size: 18px!important;
+    font-weight: 700!important;
+}
+
+
+.hotel-card-content {
+    border-bottom: 15px solid white;
+}
