@@ -21,7 +21,11 @@ $(document).ready(function(){
         $(".carousel-item").addClass('big4');
     });
 
-
+    $('.bttn-checkout').on("click", function(){
+        $(".carousel").removeClass('big4');
+        $(".carousel-item").removeClass('big4');
+        $('html, body').animate({scrollTop: '0px'}, 0);
+    });
 
 
 });

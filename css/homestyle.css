@@ -368,7 +368,10 @@ input::placeholder {
     /*background-color: #39414D;*/
     background: linear-gradient(rgba(27, 26, 60, 0.40), rgba(27, 26, 60, 1.0), rgba(27, 26, 60, 1.0), rgba(27, 26, 60, 1.0));
 }
-
+.normal4{
+    max-height: 100vh!important;
+    overflow-y: hidden;
+}
 
 
 
