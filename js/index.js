@@ -40,6 +40,7 @@ var description_line = "";
 var coords = { lat: 25.761, lng: -80.191 };
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay, dest) {
+    $('.map-load').stop(true).show()
     //============= Form Input Variables ================================
     var start = coords;
     var end = dest;
@@ -54,6 +55,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay, dest) {
         if (status === 'OK') {
             directionsDisplay.setDirections(response);
             directionsDisplay.setPanel(document.getElementById('directions'));
+            $('.map-load').delay(1000).fadeOut();
         } else {
             window.alert('Directions request failed due to ' + status);
         }
