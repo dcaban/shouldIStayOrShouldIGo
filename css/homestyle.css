@@ -11,10 +11,29 @@ h3 {
     margin: 0;
 }
 
+.map-page{
+    position: fixed;
+}
+
+
 #map {
     width: 100%;
     height: 100vh;
     background-color: grey;
+    position: absolute;
+    z-index: 0;
+}
+
+.map-load {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: #24252A;
+}
+
+.preloader-wrapper {
+    top: 50%;
 }
 
 .dark {
@@ -345,11 +364,15 @@ input::placeholder {
     height: 400px;
     margin-bottom: -40px;
 }
+
 .big4 {
     min-height: 2500px !important;
     /*background-color: #39414D;*/
     background: linear-gradient(rgba(27, 26, 60, 0.40), rgba(27, 26, 60, 1.0), rgba(27, 26, 60, 1.0), rgba(27, 26, 60, 1.0));
 }
+
+
+
 
 
 #scrollable {

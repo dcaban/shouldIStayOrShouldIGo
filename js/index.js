@@ -22,7 +22,9 @@ $(document).ready(function() {
     });
 
 });
+
 var hotelArray = ["http://www.bestneworleanshotels.com//uploads/images/hotel-signs.jpg", "http://davidlida.com/wp-content/uploads/2011/10/Hotel-NYT-1-500x375.jpg", "https://media-cdn.tripadvisor.com/media/photo-s/00/13/a5/9f/generic-hotel-photo.jpg", "https://consumermediallc.files.wordpress.com/2014/08/hotel.png", "https://img1.10bestmedia.com/static/img/placeholder-hotels.jpg"];
+
 
 $('.bttn-dark').click(function() {
 
@@ -45,6 +47,9 @@ var description_line = "";
 var coords = { lat: 25.761, lng: -80.191 };
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay, dest) {
+
+    $('.map-load').stop(true).show()
+
     //============= Form Input Variables ================================
     var start = coords;
     var end = dest;
@@ -59,6 +64,9 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay, dest) {
         if (status === 'OK') {
             directionsDisplay.setDirections(response);
             directionsDisplay.setPanel(document.getElementById('directions'));
+
+            $('.map-load').delay(1000).fadeOut();
+
         } else {
             window.alert('Directions request failed due to ' + status);
         }
@@ -262,7 +270,9 @@ function initMap() {
                         var hotel_img = $("<img>");
 
                         hotel_img.addClass('class="activator"');
+
                         hotel_img.attr("src", hotelArray[w]);
+
                         hotel_div2.append(hotel_img)
                         hotel_div.append(hotel_div2);
                         ////////DIV3////////////////
@@ -297,7 +307,9 @@ function initMap() {
                         itag2.addClass("material-icons right");
                         itag2.text("close");
                         span2.append(itag2);
+
                         span2.append("<br>Description and Price");
+
                         var rating_check = $("<p>").text("Daily Rate " + hotels[w].rooms[0].rates[0].price);
                         var total_price = $("<p>").text(" Total Amount " + hotels[w].total_price.amount);
                         rating_check.attr("id", "card_description_hotel");

@@ -21,10 +21,7 @@ $(document).ready(function(){
         $(".carousel-item").addClass('big4');
     });
 
-    $('.bttn-stay').on("click", function(){
-        $(".carousel").addClass('big4');
-        $(".carousel-item").addClass('big4');
-    });
+
 
 
 });
