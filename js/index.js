@@ -12,7 +12,12 @@ $(document).ready(function() {
 
     });
     $('.bttn-stay').click(function() {
-        $('.carousel').carousel('prev', 2);
+        $('.carousel').carousel('prev', 3);
+
+    });
+
+    $('.bttn-checkout').click(function() {
+        $('.carousel').carousel('next');
 
     });
 

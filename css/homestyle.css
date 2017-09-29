@@ -26,6 +26,7 @@ h3 {
     min-width: 100vh;
 }
 
+
 .flex {
     min-height: 100vh;
     align-items: center;
@@ -525,6 +526,7 @@ body.thin::-webkit-scrollbar {
     background: rgba(100,100,100,0.4); 
 }
 
+
 .card-text{
    font-size: 14px!important;
 }
@@ -537,4 +539,60 @@ body.thin::-webkit-scrollbar {
 
 .hotel-card-content {
     border-bottom: 15px solid white;
+}
+/*Panel Five Collapsibles*/
+.collapsible {
+    border: 0 !important;
+    margin: 0 !important;
+}
+.collapsible-body {
+    border: 0 !important;
+    color: #FFF;
+}
+
+.collapsible-header {
+    font-size: 18px;
+
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    
+    font-weight: bold;
+    padding: 14px 0px;
+    border: 3px solid #FF0072;
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+    background-color: transparent !important;
+    color: #FFF;
+    border-bottom: 3px solid #FF0072 !important;
+}
+
+.collapsible-header:before {
+    -webkit-transition: 0.5s all ease;
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: '';
+    background-color: #FF0072;
+    z-index: -2;
+}
+
+.collapsible-header:hover:before {
+    -webkit-transition: 0.5s all ease;
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+
+.collapsible-header:focus:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
 }
