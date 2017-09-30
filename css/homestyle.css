@@ -10,6 +10,29 @@ h1 {
 h3 {
     margin: 0;
 }
+body{
+background: linear-gradient(230deg, #008673, #401434);
+background-size: 400% 400%;
+
+-webkit-animation: AnimationName 30s ease infinite;
+-moz-animation: AnimationName 30s ease infinite;
+animation: AnimationName 30s ease infinite;
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:83% 0%}
+    50%{background-position:18% 100%}
+    100%{background-position:83% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:83% 0%}
+    50%{background-position:18% 100%}
+    100%{background-position:83% 0%}
+}
+@keyframes AnimationName { 
+    0%{background-position:83% 0%}
+    50%{background-position:18% 100%}
+    100%{background-position:83% 0%}
+}}
 
 .map-page{
     position: fixed;
@@ -54,6 +77,9 @@ h3 {
     justify-content: center;
 }
 
+.carousel .indicators {
+    display:none;
+}
 .carousel.carousel-slider {
     height: auto;
     min-height: 100vh;
@@ -105,6 +131,7 @@ a.bttn {
     text-decoration: none;
     -webkit-transition: 0.3s all ease;
     transition: 0.3s ease all;
+
 }
 
 a.bttn:hover {
@@ -308,6 +335,10 @@ input::placeholder {
 
 /*Cards*/
 
+.table-of-contents a 
+{
+    color:#FFF !important;
+}
 .indicator {
     background-color: #0f002c !important;
 }
@@ -615,3 +646,28 @@ body.thin::-webkit-scrollbar {
     right: 0;
     opacity: 1;
 }
+
+/*For Iphone 6*/
+@media only screen 
+and (min-device-width : 414px) 
+and (max-device-width : 736px) {
+
+#logo {
+    margin-top: 60%;
+    font-size: 30px;
+}
+
+.text-line {
+    width: 80%;
+}
+
+.flex{
+    display: initial;
+    margin-top:30%;
+}
+a.bttn.rose{
+    margin-top:50%;
+}
+
+
+ /* STYLES GO HERE */}

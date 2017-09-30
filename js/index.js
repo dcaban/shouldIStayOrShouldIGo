@@ -3,12 +3,14 @@ $(document).ready(function() {
 
     $('.input-dark').hide();
     $('.carousel-item').hide(0).fadeIn(3000);
+     $('.backbutton').hide();
 
 
     $('.carousel.carousel-slider').carousel({ fullWidth: true });
 
     $('.bttn').click(function() {
         $('.carousel').carousel('next');
+        $('.backbutton').show();
 
     });
     $('.bttn-stay').click(function() {
@@ -20,6 +22,12 @@ $(document).ready(function() {
         $('.carousel').carousel('next');
 
     });
+
+     $('.bttn-nevermind').click(function() {
+        $('.carousel').carousel('next');
+
+    });
+
 
 });
 
@@ -333,7 +341,7 @@ function initMap() {
                         console.log("There is no hotels");
                         var hotel_div = $("<div>");
                         hotel_div.attr("id", "empty_hotel_id");
-                        hotel_div.text("There is no hotel available");
+                        hotel_div.text("Sorry! No hotels available at the moment.");
                         $("#hotel_container").append(hotel_div);
                     }
                 });
