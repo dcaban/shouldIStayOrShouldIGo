@@ -20,6 +20,10 @@ $(document).ready(function(){
         $(".carousel").addClass('big4');
         $(".carousel-item").addClass('big4');
     });
+     $('.bttn-nevermind').on("click", function(){
+        $(".carousel").addClass('big4');
+        $(".carousel-item").addClass('big4');
+    });
 
     $('.bttn-checkout').on("click", function(){
         $(".carousel").removeClass('big4');

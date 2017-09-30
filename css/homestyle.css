@@ -348,6 +348,8 @@ input::placeholder {
 }
 
 .aimg {
+    height: 250px;
+    width: 250px;
     margin-top: 15px;
     margin-bottom: 10px;
     border-radius: 4px;
@@ -391,13 +393,13 @@ input::placeholder {
 
 #empty {
     height: 400px;
-    margin-bottom: -40px;
+    /*margin-bottom: -40px;*/
 }
 
 .big4 {
-    min-height: 2500px !important;
+    min-height: 2600px !important;
     /*background-color: #39414D;*/
-    background: linear-gradient(rgba(27, 26, 60, 0.40), rgba(27, 26, 60, 1.0), rgba(27, 26, 60, 1.0), rgba(27, 26, 60, 1.0));
+    background: linear-gradient(rgba(27, 26, 60, 0.60), rgba(27, 26, 60, 0.6), rgba(27, 26, 60, 0.8), rgba(27, 26, 60, 0.9), rgba(27, 26, 60, 0.9), rgba(27, 26, 60, 0.9), rgba(27, 26, 60, 0.9), rgba(27, 26, 60, 0.9), rgba(27, 26, 60, 0.9),rgba(27, 26, 60, 0.9),rgba(27, 26, 60, 0.9), rgba(27, 26, 60, 0.9), rgba(27, 26, 60, 0.9),rgba(27, 26, 60, 0.80), rgba(27, 26, 60, 0.80), rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85));
 }
 .normal4{
     max-height: 100vh!important;
@@ -436,6 +438,12 @@ input::placeholder {
     font-family: Roboto;
     font-style: black;
     color: #644cad !important;
+}
+
+.cityimg{
+    border-bottom: 10px solid black;
+    /*margin-bottom: -40px!important;*/
+    opacity: 0.95;
 }
 
 
