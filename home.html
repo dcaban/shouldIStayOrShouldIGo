@@ -1,122 +1,561 @@
 <!DOCTYPE html>
-<html >
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <title>Should I Stay or Should I Go?</title>
-  
-      <link rel="stylesheet" href="css/homestyle.css">
+    <meta charset="UTF-8">
+    <title>Should I Stay or Should I Go?</title>
 
- 
-       <!-- Compiled and minified CSS MATERIALIZED -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="css/homestyle.css">
 
-  
+    <!--Google Icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified CSS MATERIALIZED -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!-- library moments js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <!--Hotel link that I have to idea what is for-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 </head>
 
 <body>
- 
-
-
-<!--Carrousel-->
-
-  <div class="carousel carousel-slider center " data-indicators="false">
-    <div class="carousel-fixed-item center">
-      <!--<a class="btn waves-effect white grey-text darken-text-2">button</a>-->
-    </div>
-
-    <!--PANEL ONE-->
-
-    <div class="carousel-item white-text" href="#one!">
-        <h3 id="logo">ShouldIStayorShouldIGo
-        </h3>
-         <hr id="inline">
-
-        <div class="text-line">
-        <span id="text">We understand that in moments of depair, decisions can be frustrating. Here, we are dedicated to help you make the best ones.</span></div>
-        
-         <a href="#two!" class="bttn">GET STARTED</a>
-
-    </div>
-
-    <!--PANEL TWO-->
-
-    <div class="carousel-item white-text" href="#two!">
-
-      <div class="flex">
-       <div class="flex rose"><a href="#0" class="bttn stay">STAY</a></div>
-      
-      <div class="flex dark">
-      <div class="dark-form">
-        <label for="end"></label>
-      <input type="text" class="input-dark line-1 anim-typewriter search" placeholder="Where would you like to go?" id="end" autocomplete="off" data-country="us">
-
-
-      <a href="#0" class="bttn-dark">GO</a>
-      </div>
-
-      </div>
-    </div>
-  </div>
-
-
-    <!--PANEL THREE-->
-
-    <div class="carousel-item amber white-text" href="#three!">
-     
-    <div id="map"></div>
 
 
 
+    <!--Carrousel-->
 
-    </div>
+    <div class="carousel carousel-slider center " data-indicators="false">
+        <div class="carousel-fixed-item center">
+            <!--<a class="btn waves-effect white grey-text darken-text-2">button</a>-->
+        </div>
 
+        <a class="backbutton hoverable waves-effect waves-light" href=""></a>
 
-    <!--PANEL FOUR-->
-
-    <div class="carousel-item blue white-text" href="#four!">
-      <h2>Fourth Panel</h2>
-      <p class="white-text">This is your fourth panel</p>
-    </div>
-  </div>
-
-
+        <!-- particles.js container -->
+        <!--<div id="particles-js">-->
 
 
-<!-- jQuery -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!--Stars Background-->
 
-    <script src="js/index.js"></script>
+        <div class="box">
+            <div class="sky">
+
+                <div class="stars"></div>
+                <div class="stars1"></div>
+                <div class="stars2"></div>
+                <div class="shooting-stars"></div>
 
 
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+                <!--PANEL ONE-->
+                <div class="carousel-item white-text" href="#one!">
 
-  <!--Map-->
-<script async defer
-   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFS1g6Cj2tADB3ENEVpXcJ1CIeb6nk1NE&callback=initMap">
-  </script>
-  
-          
+                    <h3 id="logo">ShouldIStayorShouldIGo
+                    </h3>
+                    <hr id="inline">
+
+                    <div class="text-line">
+                        <span id="text">We understand that in moments of despair, decisions can be frustrating. Here, we are dedicated to help you make the best ones.</span></div>
+
+                    <a href="#two!" class="bttn">GET STARTED</a>
+
+                </div>
+            </div>
+
+            <!--PANEL TWO-->
+
+            <div class="carousel-item white-text" href="#two!">
+
+                <div class="flex">
+                    <div class="flex rose"><a href="#0" class="bttn bttn-stay stay tooltipped" data-delay="50" data-tooltip="Checklist and items tips" data-position="bottom">STAY</a></div>
+
+                    <div class="flex rose">
+                        <div class="dark-form">
+                            <label for="end"></label>
+                            <input type="text" class="input-dark line-1 anim-typewriter search" placeholder="Where would you like to go?" id="end" autocomplete="off" data-country="us">
+
+
+                            <a href="#0" class="bttn-dark tooltipped" data-delay="50" data-tooltip="Hotels and driving route" data-position="bottom">GO</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!--PANEL THREE-->
+
+
+            <div class="map-page carousel-item white-text" href="#three!">
+
+                 
+
+                <div class="map-load">
+                    <div class="preloader-wrapper big active">
+                        <div class="spinner-layer spinner-red-only">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="gap-patch">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+              
+                <div id="map"></div>
+
+               
+
+                <ul id="slide-out" class="side-nav fixed">
+
+                    <li>
+                        <div id="hotel_container"></li>
+                           <!--Stay Button-->
+                            <div class="bttn bttn-nevermind">NEVERMIND, I WANT TO STAY</a>
+
+                            </div>
+                        </div>
+
+                </ul>
+
+            </div>
+           
+                
+
+            <!--PANEL FOUR-->
+
+            <div id="scrollable" class="carousel-item white-text" href="#four!">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col s1"></div>
+
+
+                        <div class="col s11 m9 l9">
+                            <!--card 1 with water info-->
+                            <div class="card hoverable section scrollspy" id="water">
+
+                                <div class="card-content center-align">
+
+
+                                    <form action="#">
+                                        <h3>
+                                            <input type="checkbox" id="checkbox1" />
+                                            <label for="checkbox1"></label> WATER
+                                        </h3>
+                                    </form>
+                                </div>
+                                <div class="card-tabs">
+                                    <ul class="tabs tabs-fixed-width">
+                                        <li class="tab "><a class="cardTab" href="#tips1">Tips</a></li>
+                                        <li class="tab"><a class="active cardTab" href="#much1 ">How Much</a></li>
+                                        <li class="tab"><a class="cardTab" href="#buy1 ">Buy</a></li>
+                                    </ul>
+                                </div>
+                                <div class="card-content grey lighten-4">
+                                    <div id="much1">FEMA recommends one gallon per person per day.</div>
+                                    <div id="tips1">
+                                        <li>Water is not just used for drinking but can be used for bathing, cleaning, and flushing toilets if needed.</li>
+                                        <li>Consider filling the bathtub and any container you have with water before the storm.</li>
+                                        <li>Consider not just stocking up water but, items such as the life straw and iodine tablets to purify water if there is contamination.</li>
+                                    </div>
+                                    <div class="row center-align" id="buy1">
+                                        <div class="col s12 l6">
+                                            <!--linking amazon associate program-->
+                                            <img class="aimg z-depth-3 hoverable" src="assets/images/lifestraw.jpg">
+                                            <br>
+                                            <a class="alink" target="blank" href="http://amzn.to/2x3qfis"> LifeStraw Personal Water Filter/Purifier</a>
+                                        </div>
+                                        <div class="col s12 l6">
+                                            <img class="aimg z-depth-3 hoverable" src="assets/images/water1.jpg">
+                                            <br>
+                                            <a class="alink" target="blank" href="http://amzn.to/2x3B7g7">Potable Water Purification Tablets</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <!--card 2 with food info-->
+
+                            <div class="card hoverable section scrollspy row" id="food">
+                                <div class="card-content center-align">
+
+
+                                    <form action="#">
+                                        <h3>
+                                            <input type="checkbox" id="checkbox2" />
+                                            <label for="checkbox2"></label> NON-PERISHABLE FOOD
+                                        </h3>
+                                    </form>
+                                </div>
+                                <div class="card-tabs">
+                                    <ul class="tabs tabs-fixed-width">
+                                        <li class="tab"><a class="cardTab" href="#tips2">Tips</a></li>
+                                        <li class="tab"><a class="active tips2 cardTab" href="#much2">How Much</a></li>
+                                        <li class="tab"><a class="cardTab" href="#buy2">Buy</a></li>
+                                    </ul>
+                                </div>
+                                <div class="card-content grey lighten-4">
+                                    <div id="much2">American red cross recommends at least 3 days.</div>
+                                    <div id="tips2">
+                                        <li>Healthy food with lots of protein should take priority over junk-food.</li>
+                                                <li>Consider the sodium content of the food. The more sodium you have the more water supply you will go through.</li>
+                                                <li>Many stores will have sales of fruits and vegetables the day before the hurricane. Most fruits and vegetables do not need refrigeration.</li>
+                                                <li>Try to eat everything in the fridge first in case of a power outage.</li>
+                                    </div>
+                                    <div class="row center-align" id="buy2">
+                                        <div class="col s12 l6">
+                                            <!--linking amazon associate program-->
+                                            <img class="aimg z-depth-3 hoverable" src="assets/images/light.jpg">
+                                            <br>
+                                            <a class="alink" target="blank" href="http://amzn.to/2x4mI3C"> DNX - Paleo Low Sodium Meat Snack - Jamaican Style Bison</a>
+                                        </div>
+                                        <div class="col s12 l6">
+                                            <img class="aimg z-depth-3 hoverable" src="assets/images/soylent.jpg">
+                                            <br>
+                                            <a class="alink" target="blank" href="http://amzn.to/2yf0jk9">Soytlent Meal Replacement Drink, Cafe Vanilla Complete Protein Contains Caffeine</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <!--card 3 -->
+                            <div class="card hoverable section scrollspy" id="lights">
+                                <div class="card-content center-align ">
+
+
+                                    <form action="#">
+                                        <h3>
+                                            <input type="checkbox" id="checkbox3" />
+                                            <label for="checkbox3"></label> LIGHTS
+                                        </h3>
+                                    </form>
+                                </div>
+                                <div class="card-tabs">
+                                    <ul class="tabs tabs-fixed-width">
+                                        <li class="tab"><a class="cardTab" href="#tips3">Tips</a></li>
+                                        <li class="tab"><a class="active tips3 cardTab" href="#much3">How Much</a></li>
+                                        <li class="tab"><a class="cardTab" href="#buy3">Buy</a></li>
+                                    </ul>
+                                </div>
+                                <div class="card-content grey lighten-4">
+                                    <div id="much3"> At least two flashlights or lanterns.</div>
+                                    <div id="tips3">
+                                        <li>Do Not Forget Plenty Of Batteries</li>
+                                                <li>LED Lights Will Last You Much Longer Than Traditional Lights.</li>
+                                                <li>Make Sure Any Old Phones You Have Are Charged, Most Have FlashLights And They Can Still Dial 911 In Case Of Emergency.</li>
+                                                <li>A Lit Hurricane Party Is A Lit Hurricane Party.</li>
+                                    </div>
+
+                                    <div class="row center-align" id="buy3">
+                                        <div class="col s12 l6">
+                                            <!--linking amazon associate program-->
+                                            <img class="aimg z-depth-3 hoverable" src="assets/images/light.jpg">
+                                            <br>
+                                            <a class="alink" target="blank" href="http://amzn.to/2xNcRhj">VIBELITE Waterproof Camping Lantern and Flashlight</a>
+                                        </div>
+                                        <div class="col s12 l6">
+                                            <img class="aimg z-depth-3 hoverable" src="assets/images/usb.jpg">
+                                            <br>
+                                            <a class="alink" target="blank" href="http://amzn.to/2x3VPwq">Portable USB Cell AA Rechargeable Lithium Batteries</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <!--card 4    -->
+                            <div class="card hoverable">
+                                <div class="card-content center-align section scrollspy" id="medication">
+
+
+                                    <form action="#">
+                                        <h3>
+                                            <input type="checkbox" id="checkbox4" />
+                                            <label for="checkbox4"></label> MEDICATION
+                                        </h3>
+                                    </form>
+                                </div>
+                                <div class="card-tabs">
+                                    <ul class="tabs tabs-fixed-width">
+                                        <li class="tab"><a class="cardTab" href="#tips4">Tips</a></li>
+                                        <li class="tab"><a class="active tips4 cardTab" href="#much4">How Much</a></li>
+                                        <li class="tab"><a class="cardTab" href="#buy4">Buy</a></li>
+                                    </ul>
+                                </div>
+                                <div class="card-content grey lighten-4">
+                                    <div id="much4">At least a week supply.</div>
+                                    <div id="tips4">
+                                        <li>Fill Any Prescriptions Refills You Have.</li>
+                                                <li>Use Dry Ice and Ice To Keep Medication That Needs To Be Refrigerated Cool.</li>
+                                                <li>Make Sure To Keep Medication In A Water Tight Container.</li>
+                                    </div>
+                                    <div class="row center-align" id="buy4">
+                                        <div class="col s12 l6">
+                                            <!--linking amazon associate program-->
+                                            <img class="aimg z-depth-3 hoverable" src="assets/images/pillbox.jpg">
+                                            <br>
+                                            <a class="alink" target="blank" href="http://amzn.to/2x47O8r">Waterproof Outdoor Pill Case</a>
+                                        </div>
+                                        <div class="col s12 l6">
+                                            <img class="aimg z-depth-3 hoverable" src="assets/images/pillcase.jpg">
+                                            <br>
+                                            <a class="alink" target="blank" href="http://amzn.to/2x3QYGX">Waterproof Aluminum Pill Keychain Case</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <!--card 5-->
+                            <div class="card hoverable section scrollspy" id="hygiene">
+                                <div class="card-content center-align ">
+
+
+                                    <form action="#">
+                                        <h3>
+                                            <input type="checkbox" id="checkbox5" />
+                                            <label for="checkbox5"></label> HYGIENE PRODUCTS
+                                        </h3>
+                                    </form>
+                                </div>
+                                <div class="card-tabs">
+                                    <ul class="tabs tabs-fixed-width">
+                                        <li class="tab"><a class="cardTab" href="#tips5">Tips</a></li>
+                                        <li class="tab"><a class="active tips5 cardTab" href="#much5">How Much</a></li>
+                                        <li class="tab"><a class="cardTab" href="#buy5">Buy</a></li>
+                                    </ul>
+                                </div>
+                                <div class="card-content grey lighten-4">
+                                    <div id="much5">Keep in mind your families needs.</div>
+                                    <div id="tips5">
+                                        <li>Baby Wipes Can Help You Stay Clean While Preserving Water.</li>
+                                                <li>Be Sure To Take A Nice Hot Shower Before The Storm -- You Will Be Grateful You Did Later.</li>
+                                                <li>Fill Bathtub With Water Before And Use It To Flush The Toilet and To Wash.</li>
+                                                <li>Do Not Forget To Stock Up On Toilet Paper Before Hand.</li>
+                                            <li>If It's Yellow Let It Mellow If It's Brown Flush It Down.</li>
+                                    </div>
+                                    <div class="row center-align" id="buy5">
+                                        <div class="col s12 l6">
+                                            <!--linking amazon associate program-->
+                                            <img class="aimg z-depth-3 hoverable" src="assets/images/shower.jpg">
+                                            <br>
+                                            <a class="alink" target="blank" href="http://amzn.to/2yeQYsq">Advanced Elements Outdoor Solar Shower</a>
+                                        </div>
+                                        <div class="col s12 l6">
+                                            <img class="aimg z-depth-3 hoverable" src="assets/images/loo.jpg">
+                                            <br>
+                                            <a class="alink" target="blank" href="http://amzn.to/2xML9RC">Luggable Loo Portable 5 Gallon Toilet</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <!--card 6-->
+                            <div class="card hoverable section scrollspy" id="firstaid">
+                                <div class="card-content center-align ">
+
+
+                                    <form action="#">
+                                        <h3>
+                                            <input type="checkbox" id="checkbox6" />
+                                            <label for="checkbox6"></label> FIRST AID KIT
+                                        </h3>
+                                    </form>
+                                </div>
+                                <div class="card-tabs">
+                                    <ul class="tabs tabs-fixed-width">
+                                        <li class="tab"><a class="cardTab" href="#tips6">Tips</a></li>
+                                        <li class="tab"><a class="active tips6 cardTab" href="#much6">How Much</a></li>
+                                        <li class="tab"><a class="cardTab" href="#buy6">Buy</a></li>
+                                    </ul>
+                                </div>
+                                <div class="card-content grey lighten-4">
+                                    <div id="much6"> Consider the size of your first aid kit based on the size of your family.</div>
+                                    <div id="tips6">
+                                        <li>SpongeBob Band-aids cure anything.</li>
+                                                <li>SpongeBob Band-aids glow in the dark so it is kind of like having a flashlight.</li>
+                                                <li>SpongeBob Band-aids Make You Fell Better instantly.</li>
+                                    </div>
+
+                                    <div class="row center-align" id="buy6">
+                                        <div class="col s12 l6">
+                                            <!--linking amazon associate program-->
+                                            <img class="aimg z-depth-3 hoverable" src="assets/images/firstaid.jpg">
+                                            <br>
+                                            <a class="alink" target="blank" href="http://amzn.to/2xJ3qhi">2-in-1 First Aid Kit (120 Pieces) + Mini First Aid kit</a>
+                                        </div>
+                                        <div class="col s12 l6">
+                                            <img class="aimg z-depth-3 hoverable" src="assets/images/spongebob.jpg">
+                                            <br>
+                                            <a class="alink" target="blank" href="http://amzn.to/2xJ4lyg">Band-Aid Brand, SpongeBob Glow In The Dark Bandages</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <!--card 7    -->
+                            <div class="card hoverable section scrollspy" id="pet">
+                                <div class="card-content center-align ">
+
+
+                                    <form action="#">
+                                        <h3>
+                                            <input type="checkbox" id="checkbox7" />
+                                            <label for="checkbox7"></label> PET SUPPLIES
+                                        </h3>
+                                    </form>
+                                </div>
+                                <div class="card-tabs">
+                                    <ul class="tabs tabs-fixed-width">
+                                        <li class="tab"><a class="cardTab" href="#tips7">Tips</a></li>
+                                        <li class="tab"><a class="active tips7 cardTab" href="#much7">How Much</a></li>
+                                        <li class="tab"><a class="cardTab" href="#buy7">Buy</a></li>
+                                    </ul>
+                                </div>
+                                <div class="card-content grey lighten-4">
+                                    <div id="much7">Enough for a minimum of 3 days.</div>
+                                    <div id="tips7">
+                                        <li>hotels in florida must let your pets stay with you in their hotel during hurricanes.</li>
+                                                <li>Pets in shelters must be contained in a carrier.</li>
+                                                <li>It is important to stock up on dog food and water just like any memeber of the family.</li>
+
+                                    </div>
+                                    <div class="row center-align" id="buy7">
+                                        <div class="col s12 l6">
+                                            <!--linking amazon associate program-->
+                                            <img class="aimg z-depth-3 hoverable" src="assets/images/k9calmer.jpg">
+                                            <br>
+                                            <a class="alink" target="blank" href="http://amzn.to/2xMXsgN">K9 Calmer Safe & Natrual Dog Calming Anti-Anxiety Medication</a>
+                                        </div>
+                                        <div class="col s12 l6">
+                                            <img class="aimg z-depth-3 hoverable" src="assets/images/dogkit.jpg">
+                                            <br>
+                                            <a class="alink" target="blank" href="http://amzn.to/2xIobJF">Er Emergency Ready Deluxe 2 Dog Survival Kit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col hide-on-small-only m2 l2 left-align">
+                            <ul class=" section table-of-contents">
+                                <li><a id="sideWater" href="#water">Water</a></li>
+                                <li><a id="sideFood" href="#food">Food</a></li>
+                                <li><a id="sideLights" href="#lights">Lights</a></li>
+                                <li><a id="sideMedication" href="#medication">Medication</a></li>
+                                <li><a id="sideHygiene" href="#hygiene">Hygiene Products</a></li>
+                                <li><a id="sideFirstAid" href="#firstaid">First Aid Kit</a></li>
+                                <li><a id="sidePet" href="#pet">Pet Supplies</a></li>
+
+                            </ul>
+                        </div>
+                        <!--</div>-->
+                        <div class="row">
+                            <li>
+                                <div class="rose">
+                                    <div href="#0" class="bttn bttn-checkout stay tooltipped" data-delay="50" data-tooltip="Checkout and see the process" data-position="bottom">I'm Done!</a>
+                                    </div>
+                            </li>
+                            <img class="col l12 cityimg" src="assets/images/city-skyline-silhouette.png" alt="">
+
+                            </div>
+                            </li>
+                        </div>
+                        </p>
+                        </li>
+                    </div>
+                </div>
+                <!--PANEL FIVE-->
+                <div class="carousel-item" href="#three!">
+
+                    <!--Colapsible cards-->
+                    <div class="flex">
+                        <ul class="collapsible" data-collapsible="accordion">
+                            <li>
+                                <div class="collapsible-header"><i class="material-icons">filter_drama</i>API's</div>
+                                <div class="collapsible-body"><span>GOOGLE MAPS <br> HOTEL</span></div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header"><i class="material-icons">local_library</i>Library</div>
+                                <div class="collapsible-body"><span>PROMISES <br> MATERIALIZE <br> MATERIAL.IO</span></div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header"><i class="material-icons">repeat</i>Repeating Element</div>
+                                <div class="collapsible-body"><span>CAROUSSEL <br> CHECKLIST</span></div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header"><i class="material-icons">whatshot</i>Data Storage</div>
+                                <div class="collapsible-body"><span>FIREBASE</span></div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header"><i class="material-icons">assignment_late</i>Next Steps</div>
+                                <div class="collapsible-body"><span>FLIGHTS <br> WEATHER ALERTS <br> USER LOGIN <br> PRINT DIRECTIONS/PHONE LINKING <br> SHELTERS <br> AVAILABLE GAS </span></div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header"><i class="material-icons">question_answer</i>THANK YOU!</div>
+                                <div class="collapsible-body"><span>QUESTIONS <br> SUGGESTIONS <br> CRITICISM </span></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!--stars end div-->
+
+            </div>
+        </div>
+
+        <!-- ******************************** -->
+
+        <!-- scripts -->
+        <script src="particles.js"></script>
+        <script src="js/app.js"></script>
+
+
+        <!-- stats.js -->
+
+        <!-- jQuery -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <script src="js/index.js"></script>
+
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+        <!--Map-->
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFS1g6Cj2tADB3ENEVpXcJ1CIeb6nk1NE&callback=initMap">
+        </script>
+
+        <!--firebase-->
+        <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+        <script type="text/javascript" src="js/firebase.js"></script>
+
+
+
 
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
