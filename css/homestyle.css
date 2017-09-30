@@ -397,9 +397,9 @@ input::placeholder {
 }
 
 .big4 {
-    min-height: 2750px !important;
+    min-height: 2730px !important;
     /*background-color: #39414D;*/
-    background: linear-gradient(rgba(27, 26, 60, 0.60), rgba(27, 26, 60, 0.6), rgba(27, 26, 60, 0.8), rgba(27, 26, 60, 0.9), rgba(27, 26, 60, 0.9), rgba(27, 26, 60, 0.9), rgba(27, 26, 60, 0.9), rgba(27, 26, 60, 0.9), rgba(27, 26, 60, 0.9),rgba(27, 26, 60, 0.9),rgba(27, 26, 60, 0.9), rgba(27, 26, 60, 0.9), rgba(27, 26, 60, 0.9),rgba(27, 26, 60, 0.80), rgba(27, 26, 60, 0.80), rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85));
+    background: linear-gradient(rgba(27, 26, 60, 0.60), rgba(27, 26, 60, 0.6), rgba(27, 26, 60, 0.8), rgba(27, 26, 60, 0.9), rgba(27, 26, 60, 0.9), rgba(27, 26, 60, 0.9), rgba(27, 26, 60, 0.9), rgba(27, 26, 60, 0.9), rgba(27, 26, 60, 0.9),rgba(27, 26, 60, 0.9),rgba(27, 26, 60, 0.9), rgba(27, 26, 60, 0.9), rgba(27, 26, 60, 0.9),rgba(27, 26, 60, 0.70), rgba(27, 26, 60, 0.70), rgba(0, 0, 0, 0.80), rgba(0, 0, 0, 1.0));
 }
 .normal4{
     max-height: 100vh!important;
