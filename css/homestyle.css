@@ -397,7 +397,7 @@ input::placeholder {
 }
 
 .big4 {
-    min-height: 2600px !important;
+    min-height: 2750px !important;
     /*background-color: #39414D;*/
     background: linear-gradient(rgba(27, 26, 60, 0.60), rgba(27, 26, 60, 0.6), rgba(27, 26, 60, 0.8), rgba(27, 26, 60, 0.9), rgba(27, 26, 60, 0.9), rgba(27, 26, 60, 0.9), rgba(27, 26, 60, 0.9), rgba(27, 26, 60, 0.9), rgba(27, 26, 60, 0.9),rgba(27, 26, 60, 0.9),rgba(27, 26, 60, 0.9), rgba(27, 26, 60, 0.9), rgba(27, 26, 60, 0.9),rgba(27, 26, 60, 0.80), rgba(27, 26, 60, 0.80), rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85));
 }
@@ -441,7 +441,7 @@ input::placeholder {
 }
 
 .cityimg{
-    border-bottom: 10px solid black;
+    /*border-bottom: 10px solid black;*/
     /*margin-bottom: -40px!important;*/
     opacity: 0.95;
 }
